@@ -1,19 +1,15 @@
 package com.example.todo.todo.Dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class TodoResponseDto {
     private Long id;
     private String title;
     private Boolean completed;
-
-    public TodoResponseDto(Long id, String title, boolean completed) {
-        this.id = id;
-        this.title = title;
-        this.completed = completed;
-    }
 
 }

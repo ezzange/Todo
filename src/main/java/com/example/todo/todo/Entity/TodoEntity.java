@@ -1,10 +1,8 @@
 package com.example.todo.todo.Entity;
 
+import com.example.todo.user.entity.UserEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "todos")
@@ -22,5 +20,13 @@ public class TodoEntity {
 
     private Boolean completed;
 
+    @ToString.Exclude
+    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
+    private UserEntity user;
+
+    public void addUser(UserEntity user) {
+        this.user = user;
+        user.addTodo(this);
+    }
 
 }
