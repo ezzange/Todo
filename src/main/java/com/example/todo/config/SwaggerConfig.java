@@ -16,8 +16,8 @@ public class SwaggerConfig {
 
         Info info = new Info()
                 .version("v0.0.1")
-                .title("고파사 API 명세")
-                . description("고파사 프로젝트 백엔드 서버 API 명세서");
+                .title("Todo API 명세")
+                . description("Todo 백엔드 서버 API 명세서");
 
         return new OpenAPI()
                 .info(info);
